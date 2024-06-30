@@ -108,13 +108,13 @@ const ATM = () => {
     const cards = await fetchNui<InventoryCard[]>(CardEvents.GetInventoryCards);
     if (!cards) {
       handleClose();
-    }
-
-    setState('select-card');
-    setIsOpen(isOpen);
-
-    if (!isOpen) {
-      handleClose();
+    } else {
+      setState('select-card');
+      setIsOpen(isOpen);
+  
+      if (!isOpen) {
+        handleClose();
+      }
     }
   };
 

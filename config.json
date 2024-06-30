@@ -1,14 +1,14 @@
 {
   "general": {
-    "language": "en",
-    "currency": "USD",
+    "language": "pt",
+    "currency": "EUR",
     "identifierType": "license"
   },
   "frameworkIntegration": {
-    "enabled": false,
-    "resource": "your-resource",
+    "enabled": true,
+    "resource": "qbx_pefcl",
     "syncInitialBankBalance": true,
-    "isCardsEnabled": false
+    "isCardsEnabled": true
   },
   "database": {
     "profileQueries": true
