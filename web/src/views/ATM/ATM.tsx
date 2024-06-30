@@ -76,7 +76,7 @@ const ATM = () => {
   const [isOpen, setIsOpen] = useState(false);
   const initialStatus: BankState = 'select-card';
 
-  useNuiEvent('PEFCL', 'setVisibleATM', (data) => setIsOpen(data));
+  useNuiEvent('PEFCL', 'setVisibleATM', (data) => handleVisibility(data));
 
   const [selectedCard, setSelectedCard] = useState<InventoryCard>();
   const [cards, setCards] = useState<InventoryCard[]>([]);
