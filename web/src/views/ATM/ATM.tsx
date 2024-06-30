@@ -104,7 +104,12 @@ const ATM = () => {
 
   useKeyDown(['Escape'], handleBack);
 
-  const handleVisibility = (isOpen: boolean) => {
+  const handleVisibility = async (isOpen: boolean) => {
+    const cards = await fetchNui<InventoryCard[]>(CardEvents.GetInventoryCards);
+    if (!cards) {
+      handleClose();
+    }
+
     setState('select-card');
     setIsOpen(isOpen);
 
