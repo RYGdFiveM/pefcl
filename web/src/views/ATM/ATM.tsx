@@ -106,6 +106,7 @@ const ATM = () => {
 
   const handleVisibility = async (isOpen: boolean) => {
     const cards = await fetchNui<InventoryCard[]>(CardEvents.GetInventoryCards);
+    console.log(cards)
     if (!cards) {
       handleClose();
     } else {
