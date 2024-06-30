@@ -74,9 +74,9 @@ const ATM = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [account, setAccount] = useState<Account>();
   const [isOpen, setIsOpen] = useState(false);
+  const initialStatus: BankState = 'select-card';
 
   useNuiEvent('PEFCL', 'setVisibleATM', (data) => setIsOpen(data));
-  const initialStatus: BankState = isCardsEnabled ? 'select-card' : 'withdraw';
 
   const [selectedCard, setSelectedCard] = useState<InventoryCard>();
   const [cards, setCards] = useState<InventoryCard[]>([]);
@@ -105,6 +105,7 @@ const ATM = () => {
   useKeyDown(['Escape'], handleBack);
 
   const handleVisibility = (isOpen: boolean) => {
+    setState('select-card');
     setIsOpen(isOpen);
 
     if (!isOpen) {
